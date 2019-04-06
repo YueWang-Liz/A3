@@ -25,6 +25,7 @@ public class IrrelavantTopic extends chatBot{
 		topics.add(hobbies);
 		topics.add(collection);
 		topics.add(me);
+		
 
 	}
 	
@@ -71,9 +72,6 @@ public class IrrelavantTopic extends chatBot{
 					case "who": case "what": case "where": case "when": case "how":
 					hasQuestion = true; wHquestion=keyword; break;
 				// check for "do you like..." questions	
-					case "do":
-					doQuestion(input); return true;
-					default: break;
 				}
 				}
 			for(int j = 0; j < topics.size(); j++) {
@@ -88,7 +86,19 @@ public class IrrelavantTopic extends chatBot{
 				}
 			
 		}
-		System.out.println("Sorry, I don't understand that.");	
+		String[] defaults = {"I don't understand it.", "Maybe next topic?", "Sorry, can you say it again?", "Let's try another question", "Sorry, I do not know it"};
+		int mathtest = (int)(Math.random()*5);
+		if(mathtest == 1)
+			System.out.println(defaults[4]);
+		else if (mathtest == 2)
+			System.out.println(defaults[0]);
+		else if (mathtest == 3)
+			System.out.println(defaults[2]);
+		else if (mathtest == 4)
+			System.out.println(defaults[3]);
+		else if (mathtest == 5)
+			System.out.println(defaults[4]);
+		//System.out.println("Sorry, I don't understand that.");	
 		return true;
 		// - set up for irrelavant topics = "i dont understand"
 
@@ -99,15 +109,7 @@ public class IrrelavantTopic extends chatBot{
 		
 	}
 	
-	public void doQuestion(String input) {
-		if (input.contains("eating")||input.contains("eat")||input.contains("drink")||input.contains("rocks")||input.contains("bubble tea")||input.contains("collecting")||input.contains("lord of the rings")||input.contains("books")||input.contains("food")||input.contains("stones")) 
-//		case "eating": case "eat": case "drinking": case "drink": case "bubble": case "rocks": case "rock": case "bones": case "bone":
-			System.out.println("Yes I do.");
-		else
-			System.out.println("No I do not."); 
-		
-		return;
-	}
+	
 		
 }
 

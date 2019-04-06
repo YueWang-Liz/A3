@@ -1,14 +1,34 @@
 package bot;
+
 import java.lang.reflect.*;
+
 import java.util.Scanner;
+
+
+
 public class chatBot {
 
 	static String name; 
 	static String checkstring;
 	public static IrrelavantTopic irrTopic;
+	public static PorterStemmer stemmer;
+	
+	/*
+	public chatBot(){
+		WindowListener listener = new WindowListener();
+		frame.addWindowListener(listener);
+	}
+	
+	class Listener implements ActionListener{
+	public void actionPerformed(ActionEvent event){
+}
+	*/
 	
 	public static void main(String args[]) {
-		irrTopic = new IrrelavantTopic();
+		
+
+	    irrTopic = new IrrelavantTopic();
+	    stemmer = new PorterStemmer();
 		Loadingscrean.main(args); 
 
 		System.out.println("ROAr roar roooar roar rrrroooaaaarrr RoaaaaaaaaaaaaaaaAAArrArArAr");
@@ -55,16 +75,7 @@ public class chatBot {
 		}
 	}
 	
-	public static String thinking(){ //prints a line of dots after 1.5 seconds to mimic thinking animation
-		long curtime = System.currentTimeMillis();
-		
-		long waittime1 = curtime + 1000;
-		while (curtime != waittime1){				
-			 curtime = System.currentTimeMillis();  
-		}                                           
-		 return "............";
-
-	}
+	
 	//CHECKING THE TOPIC
 	public static void checktopic(String top) { //grabs the topic, to save space this is used fo most topics
 		Scanner topche = new Scanner(System.in);
@@ -98,32 +109,19 @@ public class chatBot {
 			aboutMe();
 			inputfield();
 		}
-		//swear filter
-		else if(top.contains("fuck") || top.contains("bitch") || top.contains("shit") || top.contains("ass") || top.contains("fucking") || top.contains("motherfucker") || top.contains("damn")){
-			System.out.println("Please do not swear at me!");
-			thinking();
-			thinking(); //just giving spacing
-			System.out.println("If you are going to be rude this conversation is over!");
-			thinking();
-			thinking();//more spacing
-			thinking();
-			System.exit(0); //closing the program forcibly
-		}
+		
+		
 	}
-	
+
 	//helpMe prompts user with list of topics the bot is able to talk about.
 	public static void helpMe() {
 		System.out.println("Curious to know what I can talk about? Have a list"); //prints list of topics
-		System.out.println(thinking());	  //************************************************
-		System.out.println(thinking());   //*ISSUE WITH THINKING METHOD OMITTED FOR TESTING*
-		System.out.println(thinking());   //************************************************
 		System.out.println("..........."); //spacer
 		System.out.println("We can test how well your roar is!");			 	//Prompts roar contest
 		System.out.println("Or we can talk about food");						//Prompts food topic
 		System.out.println("We can discuss my rock collection!");				//Prompts collection topic
 		System.out.println("How about talking about Lord of The Rings?");		//Prompts Lord of The Rings topic
 		System.out.println("Or if you want to get to know me thats fine too!");	//Prompts general qna
-		System.out.println(thinking());
 		
 	}
 	

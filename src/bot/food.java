@@ -13,12 +13,12 @@ public class food extends chatBot implements TopicQuestions {
 	Scanner in = new Scanner(System.in);
 	
 	
-	String[] what = {"Meat, like human", "Human, just like you", "Bubble Tea", "It's delisious"};
+	String[] what = {"Meat, like human", "Human, just like you", "Bubble Tea", "It's delisious", "Sometimes I will drink Coca-Cola", "Sometimes I will drink bubble tea"};
 	String[] where = {"In my cave", "In Taiwan"};
 	String[] who = {"Sometimes with myself", "Sometimes with other dinosaurs", "by myself", "The owner."};
 	String[] how = {"four times", "It's so delicious", "By my hand", "It's a combination of tea and milk and tapioca balls.", "I like it half sweet."};
-	String[] why = {"I need to eat.", "Because you look delicious."};
-	String[] when = {"During luchtime", "Durig dinner time.", "Perhaps during breakfest time.", "Two days ago.", "When I am hungry."};		
+	String[] why = {"I need to eat.", "Because you look delicious.", "because it's delicious", "Because it can increase my energy"};
+	String[] when = {"During luchtime", "Durig dinner time.", "Perhaps during breakfest time.", "Two days ago.", "When I am hungry.", "When I am thirsty"};		
 
 	
 	@Override
@@ -82,6 +82,13 @@ public class food extends chatBot implements TopicQuestions {
 				else
 					System.out.println(what[1]);
 			}
+		else if(input.contains("drink") && input.contains("as usual")){
+			int mathtest = (int)(Math.random()*2);
+			if(mathtest == 1)
+				System.out.println(what[4]);
+			else
+				System.out.println(what[5]);
+			}
 		else if(input.contains("drink")){
 			System.out.println(what[2]);
 		}
@@ -125,6 +132,9 @@ public class food extends chatBot implements TopicQuestions {
 		else if (input.contains("eat")){
 			System.out.println(when[4]);
 		}
+		else if(input.contains("drink")){
+			System.out.println(when[5]);
+		}
 	}
 
 
@@ -133,10 +143,16 @@ public class food extends chatBot implements TopicQuestions {
 	public void whyQuestion(String input) {
 		// TODO Auto-generated method stub
 		if (input.contains("eat") && (input.contains("me")|| input.contains("human"))){
-			System.out.println(who[1]);
+			System.out.println(why[1]);
 		}
 		else if (input.contains("eat")){
-			System.out.println(who[0]);
+			System.out.println(why[0]);
+		}
+		else if(input.contains("drink") && input.contains("bubble tea")){
+			System.out.println(why[2]);
+		}
+		else if(input.contains("drink") && input.contains("Coca-cola")){
+			System.out.println(why[3]);
 		}
 	}
 

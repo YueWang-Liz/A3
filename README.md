@@ -1,5 +1,5 @@
-# COSC310ChatBot Group 20 [Dino-Bot]
-Members: Noah Arndt, Aidan Davies, Kathryn Ng, Yue Wang, Eric Yang
+﻿# COSC310ChatBot A3 [Dino-Bot]
+Student Name: Yue Wang
 
 ## What is Dino-Bot?
 Dino-Bot is a conversation robot that you can talk to ( just like your friend !). We created this chatbot with the idea in mind of conversing with a prehistoric reptile.
@@ -37,4 +37,50 @@ Friendly reminder, Tee-Tee does not like swear words. However, you may try and s
 
 ## About our code:
 We have a main chatbot class, then we have other (topic) classes that implement the interface. All our topic classes are extended from the main chatbot class. When the input ( user's input) first receive, IrrelaventTipic class will process the input and assign the input to the related topic classes and also passes the input to the topic class. In each topic class, it will process the input ( user's input ) and find the reasonable respond to answer (print) the user. 
+Before the user type his name, Dino-Bot will show the shape of a dinosaur and our group number.
+
+(All the images of example are in the PDF.)
+
+## updated:
+1. Making a simple GUI
+This is a very simple GUI named Dino Chatbot. This chatbot can say hello to the users, and ask the users to type their names inside the box. Also users can type the question which they want to ask into the box.
+ 
+2. Adding an extra topic
+Comparing to the previous code, the new topic about drinking is added to the chatbot. Users can ask questions about drinking, and Dino-Bot will give the reasonable respond to the users.
+
+3. Giving 5 different responses when the input is outside the two topics
+For the new code, Dino-Bot can give 5 different reasonable responses when the users type something which is not include in the two topics
+Dino-Bot will give 5 different reasonable responses randomly to the question which is not include in the topics. The five responses are Maybe next topic, I don’t understand it, Let’s try another question, Sorry can you say it again and Sorry I do not know it respectively.
+
+4. the spelling mistakes
+For the wrong spelling, Dino-ChatBot can distinguish what this word is. 
+Getting the method for the website: https://tartarus.org/martin/PorterStemmer/
+
+5. use of language toolkits
+Dino-Bot can divide entire sentence into some exact words.
+Part-of-Speech tagging: Getting the method from the website: https://stanfordnlp.github.io/CoreNLP/api.html
+
+6. conversation with another agent
+Get the method from the website: http://developer.51cto.com/art/201202/317543.htm
+The class named Server is used for accepting the message and when the chatbot receive the message which is bye, it will end the program.
+The class named Client is connected with the “Server” class. This class is used for accepting the input of users, and when users press enter, this class will send the message to the “Server” class. Users can enter bye to end the program.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

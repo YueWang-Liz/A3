@@ -39,9 +39,9 @@ Friendly reminder, Tee-Tee does not like swear words. However, you may try and s
 We have a main chatbot class, then we have other (topic) classes that implement the interface. All our topic classes are extended from the main chatbot class. When the input ( user's input) first receive, IrrelaventTipic class will process the input and assign the input to the related topic classes and also passes the input to the topic class. In each topic class, it will process the input ( user's input ) and find the reasonable respond to answer (print) the user. 
 Before the user type his name, Dino-Bot will show the shape of a dinosaur and our group number.
 
-(All the images of example are in the PDF.)
 
 ## updated:
+(All the images of example are in the PDF.)
 1. Making a simple GUI
 This is a very simple GUI named Dino Chatbot. This chatbot can say hello to the users, and ask the users to type their names inside the box. Also users can type the question which they want to ask into the box.
  
